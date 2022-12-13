@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +31,7 @@ public class User implements Serializable {
 	private String passworld;
 	private String email;
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy ="client")
 	private List<Order> orders = new ArrayList<>();
 	
